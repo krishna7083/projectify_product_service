@@ -11,18 +11,18 @@ import javax.persistence.*;
 public class Product {
 
     @Id
-    @Column(length = 100)
-    private String product_key;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long product_key;
     private String product_tag;
     private String product_description;
     private String product_image_link;
     private String product_price;
 
-    public String getProduct_key() {
+    public Long getProduct_key() {
         return product_key;
     }
 
-    public void setProduct_key(String product_key) {
+    public void setProduct_key(Long product_key) {
         this.product_key = product_key;
     }
 

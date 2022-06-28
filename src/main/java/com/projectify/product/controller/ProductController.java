@@ -1,6 +1,7 @@
 package com.projectify.product.controller;
 
 import com.projectify.product.entity.Product;
+import com.projectify.product.model.AddDummyProductResponse;
 import com.projectify.product.model.AddProductResponse;
 import com.projectify.product.model.GetProductResponse;
 import com.projectify.product.service.ProductService;
@@ -29,6 +30,12 @@ public class ProductController {
     public ResponseEntity<Object> getProducts(){
         GetProductResponse getProductResponse = productService.getProducts();
         return new ResponseEntity<Object>(getProductResponse,HttpStatus.OK);
+    }
+
+    @GetMapping("/adddummyproducts")
+    public ResponseEntity<Object> addDummyProducts(){
+        AddDummyProductResponse addDummyProductResponse = productService.addDummyProductResponse();
+        return new ResponseEntity<Object>(addDummyProductResponse,HttpStatus.OK);
     }
 
 }
